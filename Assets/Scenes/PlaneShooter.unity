@@ -200,7 +200,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a91d996e199ee6945993fc4f757a0067, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isShooting: 1
+  isShooting: 0
   bulletPrefab: {fileID: 1966416063}
 --- !u!1 &496066890
 GameObject:
@@ -247,6 +247,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mouseWorldPosition: {x: 0, y: 0, z: 0}
+  onFiring: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0

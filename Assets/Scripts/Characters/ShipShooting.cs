@@ -8,10 +8,16 @@ public class ShipShooting : MonoBehaviour
     [SerializeField] protected bool isShooting = false;
     [SerializeField] protected Transform bulletPrefab;
 
-    private void FixedUpdate()
+    void Update()
+    {
+        this.IsShooting();
+        //this.Shooting();
+    }
+    void FixedUpdate()
     {
         this.Shooting();
     }
+
 
     protected virtual void Shooting()
     {
@@ -22,5 +28,11 @@ public class ShipShooting : MonoBehaviour
 
         Instantiate(this.bulletPrefab, spawnPos, rotation);
         Debug.Log("Shooting");
+    }
+
+    protected virtual bool IsShooting()
+    {
+        this.isShooting = InputManager.Instance.OnFiring == 1;
+        return isShooting;
     }
 }

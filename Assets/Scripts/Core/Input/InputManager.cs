@@ -15,7 +15,7 @@ public class InputManager : MonoBehaviour
     public float OnFiring { get => onFiring; }
 
 
-    private void Awake()
+    void Awake()
     {
         if (InputManager.instance != null) Debug.LogError("Only 1 InputManager allow to exist");
         InputManager.instance = this;

@@ -16,5 +16,4 @@ public class BulletSpawner : Spawner
         BulletSpawner.instance = this;
     }
 
-
 }

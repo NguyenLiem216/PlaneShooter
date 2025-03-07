@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Despawn : LiemMonoBehavior
+public abstract class Despawn : LiemMonoBehaviour
 {
     
     protected virtual void FixedUpdate()

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEditor.TextCore.Text;
 using UnityEngine;
 
-public abstract class Spawner : LiemMonoBehavior
+public abstract class Spawner : LiemMonoBehaviour
 {
     [SerializeField] protected Transform holder;
 

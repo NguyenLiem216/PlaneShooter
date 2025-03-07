@@ -1,13 +1,17 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LiemMonoBehavior : MonoBehaviour
+public class LiemMonoBehaviour : MonoBehaviour
 {
     protected virtual void Reset()
     {
         this.LoadComponents();
+        this.ResetValue();
     }
+
+    
 
     protected virtual void Start()
     {
@@ -21,5 +25,10 @@ public class LiemMonoBehavior : MonoBehaviour
     protected virtual void Awake()
     {
         this.LoadComponents();
+    }
+
+    protected virtual void ResetValue()
+    {
+        
     }
 }

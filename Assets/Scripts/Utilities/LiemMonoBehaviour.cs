@@ -10,8 +10,10 @@ public class LiemMonoBehaviour : MonoBehaviour
         this.LoadComponents();
         this.ResetValue();
     }
-
-    
+    protected virtual void Awake()
+    {
+        this.LoadComponents();
+    }
 
     protected virtual void Start()
     {
@@ -22,11 +24,7 @@ public class LiemMonoBehaviour : MonoBehaviour
     {
         //For override
     }
-    protected virtual void Awake()
-    {
-        this.LoadComponents();
-    }
-
+   
     protected virtual void ResetValue()
     {
         

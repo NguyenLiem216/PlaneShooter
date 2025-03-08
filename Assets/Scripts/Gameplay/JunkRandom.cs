@@ -12,7 +12,7 @@ public class JunkRandom : LiemMonoBehaviour
     {
         base.LoadComponents();
         this.LoadJunkCtrl();
-    }
+    }    
 
     protected virtual void LoadJunkCtrl()
     {
@@ -28,7 +28,8 @@ public class JunkRandom : LiemMonoBehaviour
 
     protected virtual void JunkSpawning()
     {
-        Vector3 pos = transform.position;
+        Transform ranPoint = this.junkCtrl.JunkSpawnPoints.GetRandom();
+        Vector3 pos = ranPoint.position;
         Quaternion rot = transform.rotation;
         Transform obj = this.junkCtrl.JunkSpawner.Spawn(JunkSpawner.meteoriteOne, pos, rot);
         obj.gameObject.SetActive(true);

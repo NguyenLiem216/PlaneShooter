@@ -27,6 +27,11 @@ public class LiemMonoBehaviour : MonoBehaviour
    
     protected virtual void ResetValue()
     {
-        
+        //For override
+    }
+
+    protected virtual void OnEnable()
+    {
+        //For override
     }
 }

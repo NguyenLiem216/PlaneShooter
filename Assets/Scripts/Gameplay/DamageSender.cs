@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class DamageSender : LiemMonoBehaviour
 {
-    [SerializeField] protected float damage = 1;
+    [SerializeField] protected int damage = 1;
 
     public virtual void Send(Transform obj)
     {
@@ -17,11 +17,6 @@ public class DamageSender : LiemMonoBehaviour
     public virtual void Send(DamageReceiver damageReceiver)
     {
         damageReceiver.Deduct(this.damage);
-        this.DestroyObject();
     }
-
-    protected virtual void DestroyObject()
-    {
-        Destroy(transform.parent.gameObject);
-    }
+    
 }

@@ -8,10 +8,29 @@ public class JunkCtrl : LiemMonoBehaviour
     [SerializeField] protected Transform model;
     public Transform Model { get => model; }
 
+    [SerializeField] protected JunkDespawn junkDespawn;
+    public JunkDespawn JunkDespawn { get => junkDespawn; }
+
+    protected override void Awake()
+    {
+        if (!gameObject.activeSelf)
+        {
+            gameObject.SetActive(true);
+            Debug.Log(transform.name + " was inactive. Activating now!", gameObject);
+        }
+    }
     protected override void LoadComponents()
     {
         base.LoadComponents();
         this.LoadModel();
+        this.LoadJunkDespawn();
+    }
+
+    protected virtual void LoadJunkDespawn()
+    {
+        if (this.junkDespawn != null) return;
+        this.junkDespawn = transform.parent.GetComponentInChildren<JunkDespawn>();
+        Debug.Log(transform.name + ": LoadJunkDespawn", gameObject);
     }
 
     protected virtual void LoadModel()

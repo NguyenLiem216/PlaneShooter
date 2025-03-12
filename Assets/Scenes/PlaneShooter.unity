@@ -207,6 +207,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   model: {fileID: 957607354}
+  junkDespawn: {fileID: 585028561}
 --- !u!1 &257308059
 GameObject:
   m_ObjectHideFlags: 0
@@ -240,7 +241,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 175216165}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &257308061
+--- !u!114 &257308061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 257308059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3de023625ba73349802d8cfc7184111, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sphereCollider: {fileID: 257308062}
+  hp: 1
+  hpMax: 2
+  isDead: 0
+  junkCtrl: {fileID: 175216166}
+--- !u!135 &257308062
 SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -261,20 +279,6 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.2
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &257308062
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 257308059}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a18ba7be4734dd74e82bbb4d1e6af905, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hp: 1
-  hpMax: 10
 --- !u!1 &291582526
 GameObject:
   m_ObjectHideFlags: 0
@@ -1153,10 +1157,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1344250628}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d00feb90eb09e74a92aa8c8b33e054a, type: 3}
+  m_Script: {fileID: 11500000, guid: 3f4be19d7c97b4c428c03f6fbce488ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
+  bulletCtrl: {fileID: 1900822784}
 --- !u!1 &1527005948
 GameObject:
   m_ObjectHideFlags: 0
@@ -1539,6 +1544,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageSender: {fileID: 1344250630}
+  bulletDespawn: {fileID: 1886272077}
 --- !u!1 &1966416062
 GameObject:
   m_ObjectHideFlags: 0

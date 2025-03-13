@@ -707,8 +707,8 @@ GameObject:
   m_Component:
   - component: {fileID: 737469740}
   - component: {fileID: 737469739}
-  - component: {fileID: 737469742}
   - component: {fileID: 737469743}
+  - component: {fileID: 737469744}
   m_Layer: 0
   m_Name: JunkSpawner
   m_TagString: Untagged
@@ -729,6 +729,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   holder: {fileID: 2050571539}
+  spawnedCount: 0
   prefabs:
   - {fileID: 175216165}
   poolObjs: []
@@ -749,19 +750,6 @@ Transform:
   - {fileID: 2050571539}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &737469742
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 737469738}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5cc6a6c05da89e143ab24cdffca8161d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  junkSpawnerCtrl: {fileID: 0}
 --- !u!114 &737469743
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -776,6 +764,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   junkSpawnPoints: {fileID: 1676660630}
   junkSpawner: {fileID: 737469739}
+--- !u!114 &737469744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 737469738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cc6a6c05da89e143ab24cdffca8161d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  junkSpawnerCtrl: {fileID: 737469743}
+  randomDelay: 1
+  randomTimer: 0
+  randomLimit: 9
 --- !u!1 &758107293
 GameObject:
   m_ObjectHideFlags: 0
@@ -815,7 +819,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 758107293}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe52dae6253ff854bb5c58ca0c06890f, type: 3}
   m_Name: 
@@ -1592,6 +1596,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   holder: {fileID: 1752044421}
+  spawnedCount: 0
   prefabs:
   - {fileID: 1900822783}
   poolObjs: []

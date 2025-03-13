@@ -6,7 +6,11 @@ using UnityEngine;
 
 public abstract class Spawner : LiemMonoBehaviour
 {
+    [Header("Spawner")]
     [SerializeField] protected Transform holder;
+
+    [SerializeField] protected int spawnedCount = 0;
+    public int SpawnedCount  => spawnedCount;
 
     [SerializeField] protected List<Transform> prefabs;
     [SerializeField] protected List<Transform> poolObjs;
@@ -62,6 +66,7 @@ public abstract class Spawner : LiemMonoBehaviour
 
 
         newPrefab.parent = this.holder;
+        this.spawnedCount++;
         return newPrefab;
     }
 
@@ -85,6 +90,7 @@ public abstract class Spawner : LiemMonoBehaviour
     {
         this.poolObjs.Add(obj);
         obj.gameObject.SetActive(false);
+        this.spawnedCount--;
     }
 
 

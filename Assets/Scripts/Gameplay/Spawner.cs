@@ -60,6 +60,13 @@ public abstract class Spawner : LiemMonoBehaviour
             Debug.LogWarning("Prefab not found: " + prefabName);
             return null;
         }
+       
+        return this.Spawn(prefab,spawnPos,rotation);
+    }
+
+    public virtual Transform Spawn(Transform prefab, Vector3 spawnPos, Quaternion rotation)
+    {
+
 
         Transform newPrefab = this.GetObjectFromPool(prefab);
         newPrefab.SetPositionAndRotation(spawnPos, rotation);
@@ -102,5 +109,11 @@ public abstract class Spawner : LiemMonoBehaviour
         }
 
         return null;
+    }
+
+    public virtual Transform RandomPrefab()
+    {
+        int rand = UnityEngine.Random.Range(0, this.prefabs.Count);
+        return this.prefabs[rand];
     }
 }

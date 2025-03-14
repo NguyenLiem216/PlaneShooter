@@ -45,7 +45,10 @@ public class JunkSpawnerRandom : LiemMonoBehaviour
         Transform ranPoint = this.junkSpawnerCtrl.JunkSpawnPoints.GetRandom();
         Vector3 pos = ranPoint.position;
         Quaternion rot = transform.rotation;
-        Transform obj = this.junkSpawnerCtrl.JunkSpawner.Spawn(JunkSpawner.meteoriteOne, pos, rot);
+
+
+        Transform prefab = this.junkSpawnerCtrl.JunkSpawner.RandomPrefab();
+        Transform obj = this.junkSpawnerCtrl.JunkSpawner.Spawn(prefab, pos, rot);
         obj.gameObject.SetActive(true);
 
 

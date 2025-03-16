@@ -32,7 +32,7 @@ public class DamageReceiver : LiemMonoBehaviour
         Debug.Log(transform.name + ": LoadCollider", gameObject);
     }   
 
-    protected virtual void Reborn()
+    public virtual void Reborn()
     {
         this.hp = this.hpMax;
         this.isDead = false;

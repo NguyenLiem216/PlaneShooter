@@ -207,7 +207,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   model: {fileID: 957607354}
-  junkDespawn: {fileID: 585028561}
+  junkDespawn: {fileID: 0}
+  junkSO: {fileID: 11400000, guid: 5dead36ff219307498fd0cd8d78fca3e, type: 2}
 --- !u!1 &257308059
 GameObject:
   m_ObjectHideFlags: 0
@@ -273,11 +274,11 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.2
+  m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &284601407
 GameObject:
@@ -330,7 +331,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   model: {fileID: 445568497}
-  junkDespawn: {fileID: 1264824454}
+  junkDespawn: {fileID: 0}
+  junkSO: {fileID: 11400000, guid: 6e3ab2b8b8c911a44991ecacaa24e8a8, type: 2}
 --- !u!1 &291582526
 GameObject:
   m_ObjectHideFlags: 0
@@ -1074,11 +1076,11 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.2
+  m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &873664847
 GameObject:

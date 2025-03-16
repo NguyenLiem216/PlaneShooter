@@ -11,6 +11,10 @@ public class JunkCtrl : LiemMonoBehaviour
     [SerializeField] protected JunkDespawn junkDespawn;
     public JunkDespawn JunkDespawn { get => junkDespawn; }
 
+    [SerializeField] protected JunkSO junkSO;
+    public JunkSO JunkSO => junkSO;
+
+
     protected override void Awake()
     {
         if (!gameObject.activeSelf)
@@ -24,6 +28,7 @@ public class JunkCtrl : LiemMonoBehaviour
         base.LoadComponents();
         this.LoadModel();
         this.LoadJunkDespawn();
+        this.LoadJunkSO();
     }
 
     protected virtual void LoadJunkDespawn()
@@ -38,5 +43,13 @@ public class JunkCtrl : LiemMonoBehaviour
         if (this.model != null) return;
         this.model = transform.Find("Model");
         Debug.Log(transform.name + ": LoadModel", gameObject);
+    }
+
+    protected virtual void LoadJunkSO()
+    {
+        if (this.junkSO != null) return;
+        string resPath = "Junk/" + transform.name;
+        this.junkSO = Resources.Load<JunkSO>(resPath);
+        Debug.Log(transform.name + ": LoadJunkSO", gameObject);
     }
 }

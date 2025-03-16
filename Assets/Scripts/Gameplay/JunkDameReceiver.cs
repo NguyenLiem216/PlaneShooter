@@ -26,4 +26,10 @@ public class JunkDameReceiver : DamageReceiver
         this.junkCtrl.JunkDespawn.DespawnObject();
     }
 
+    public override void Reborn()
+    {
+        this.hpMax = this.junkCtrl.JunkSO.hpMax;
+        base.Reborn();
+        Debug.LogWarning("Reborn", gameObject);
+    }
 }

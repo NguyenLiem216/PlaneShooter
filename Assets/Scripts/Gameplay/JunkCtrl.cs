@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -34,9 +34,20 @@ public class JunkCtrl : LiemMonoBehaviour
     protected virtual void LoadJunkDespawn()
     {
         if (this.junkDespawn != null) return;
-        this.junkDespawn = transform.parent.GetComponentInChildren<JunkDespawn>();
-        Debug.Log(transform.name + ": LoadJunkDespawn", gameObject);
+
+        // Tìm trong chính đối tượng JunkCtrl
+        this.junkDespawn = GetComponentInChildren<JunkDespawn>();
+
+        if (this.junkDespawn == null)
+        {
+            Debug.LogError(transform.name + ": JunkDespawn is NULL! Make sure it exists in the hierarchy.", gameObject);
+        }
+        else
+        {
+            Debug.Log(transform.name + ": Successfully loaded JunkDespawn!", gameObject);
+        }
     }
+
 
     protected virtual void LoadModel()
     {

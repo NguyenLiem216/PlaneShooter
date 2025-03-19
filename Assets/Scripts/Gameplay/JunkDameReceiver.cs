@@ -23,8 +23,21 @@ public class JunkDameReceiver : DamageReceiver
 
     protected override void OnDead()
     {
+        if (this.junkCtrl == null)
+        {
+            Debug.LogError("JunkCtrl is NULL!", gameObject);
+            return;
+        }
+
+        if (this.junkCtrl.JunkDespawn == null)
+        {
+            Debug.LogError("JunkDespawn is NULL!", gameObject);
+            return;
+        }
+
         this.junkCtrl.JunkDespawn.DespawnObject();
     }
+
 
     public override void Reborn()
     {

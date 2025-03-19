@@ -207,7 +207,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   model: {fileID: 957607354}
-  junkDespawn: {fileID: 0}
+  junkDespawn: {fileID: 585028561}
   junkSO: {fileID: 11400000, guid: 5dead36ff219307498fd0cd8d78fca3e, type: 2}
 --- !u!1 &257308059
 GameObject:
@@ -331,7 +331,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   model: {fileID: 445568497}
-  junkDespawn: {fileID: 0}
+  junkDespawn: {fileID: 1264824454}
   junkSO: {fileID: 11400000, guid: 6e3ab2b8b8c911a44991ecacaa24e8a8, type: 2}
 --- !u!1 &291582526
 GameObject:

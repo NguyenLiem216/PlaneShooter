@@ -23,6 +23,7 @@ public class JunkDameReceiver : DamageReceiver
 
     protected override void OnDead()
     {
+        this.OnDeadFX();
         if (this.junkCtrl == null)
         {
             Debug.LogError("JunkCtrl is NULL!", gameObject);
@@ -38,11 +39,21 @@ public class JunkDameReceiver : DamageReceiver
         this.junkCtrl.JunkDespawn.DespawnObject();
     }
 
+    protected virtual void OnDeadFX()
+    {
+        string fxName = this.GetOnDeadFXName();
+        Transform fxOnDead = FXSpawner.Instance.Spawn(fxName,transform.position,transform.rotation);
+        fxOnDead.gameObject.SetActive(true);
+    }
+
+    protected virtual string GetOnDeadFXName()
+    {
+        return FXSpawner.smoke1a;
+    }
 
     public override void Reborn()
     {
         this.hpMax = this.junkCtrl.JunkSO.hpMax;
-        base.Reborn();
-        Debug.LogWarning("Reborn", gameObject);
+        base.Reborn(); 
     }
 }

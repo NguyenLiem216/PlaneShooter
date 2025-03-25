@@ -34,8 +34,26 @@ public class BulletImpart : BulletAbstract
         this.sphereCollider.radius = 0.05f;
         Debug.Log(transform.name + ": LoadCollider", gameObject);
     }
-    protected virtual void OnTriggerEnter(Collider collider)
+    protected virtual void OnTriggerEnter(Collider other)
     {
-        this.bulletCtrl.DamageSender.Send(collider.transform);
+        this.bulletCtrl.DamageSender.Send(other.transform);
+        this.CreateFXImpact(other);
+    }
+
+    protected virtual void CreateFXImpact(Collider other)
+    {
+        string fxName = this.GetImpactFX();
+
+
+        Vector3 hitPos = transform.position;
+        Quaternion hitRot = transform.rotation;
+        Quaternion rotationEffect = Quaternion.Euler(0, 0, 90);
+        Transform fxImpact = FXSpawner.Instance.Spawn(fxName, hitPos, hitRot * rotationEffect);
+        fxImpact.gameObject.SetActive(true);
+    }
+
+    protected virtual string GetImpactFX()
+    {
+        return FXSpawner.impact1;
     }
 }

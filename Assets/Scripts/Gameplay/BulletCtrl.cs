@@ -11,6 +11,9 @@ public class BulletCtrl : LiemMonoBehaviour
     [SerializeField] protected BulletDespawn bulletDespawn;
     public BulletDespawn BulletDespawn { get => bulletDespawn; }
 
+    [SerializeField] protected Transform shooter;
+    public Transform Shooter => shooter; 
+
     protected override void LoadComponents()
     {
         base.LoadComponents();
@@ -30,5 +33,10 @@ public class BulletCtrl : LiemMonoBehaviour
         if (this.damageSender != null) return;
         this.damageSender = transform.GetComponentInChildren<DamageSender>();
         Debug.Log(transform.name + ": LoadDamageSender", gameObject);
+    }
+
+    public virtual void SetShooter(Transform shooter)
+    {
+        this.shooter = shooter;
     }
 }

@@ -24,6 +24,7 @@ public class JunkDameReceiver : DamageReceiver
     protected override void OnDead()
     {
         this.OnDeadFX();
+        this.OnDeadDrop();
         if (this.junkCtrl == null)
         {
             Debug.LogError("JunkCtrl is NULL!", gameObject);
@@ -37,7 +38,17 @@ public class JunkDameReceiver : DamageReceiver
         }
 
         this.junkCtrl.JunkDespawn.DespawnObject();
+
+       
     }
+
+    protected virtual void OnDeadDrop()
+    {
+        Vector3 dropPos = transform.position;
+        Quaternion dropRot = transform.rotation;
+        ItemDropSpawner.Instance.Drop(this.junkCtrl.JunkSO.dropList, dropPos, dropRot);
+    }
+
 
     protected virtual void OnDeadFX()
     {

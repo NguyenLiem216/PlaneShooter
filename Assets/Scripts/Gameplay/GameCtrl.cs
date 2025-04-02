@@ -29,6 +29,6 @@ public class GameCtrl : LiemMonoBehaviour
     {
         if (this.mainCamera != null) return;
         this.mainCamera = GameCtrl.FindObjectOfType<Camera>();
-        Debug.Log(transform.name + ": LoadCamera", gameObject);
+        //Debug.Log(transform.name + ": LoadCamera", gameObject);
     }
 }

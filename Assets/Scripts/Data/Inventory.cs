@@ -11,7 +11,7 @@ public class Inventory : LiemMonoBehaviour
     protected override void Start()
     {
         base.Start();
-        this.AddItem(ItemCode.IronOre, 3);
+        this.AddItem(ItemCode.IronOre, 6);
     }
 
     public virtual bool AddItem(ItemCode itemCode, int addCount)

@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -24,6 +24,26 @@ public class Inventory : LiemMonoBehaviour
         itemInventory.itemCount = newCount;
         return true;
     }
+
+    #region Update con tàu tạm để đây
+    //public virtual bool DeductItem(ItemCode itemCode, int addCount)
+    //{
+    //    ItemInventory itemInventory = this.GetItemByCode(itemCode);
+    //    int newCount = itemInventory.itemCount - addCount;
+    //    if (newCount < 0) return false;
+
+    //    itemInventory.itemCount = newCount;
+    //    return true;
+    //}
+
+    //public virtual bool TryDeductItem(ItemCode itemCode,int addCount)
+    //{
+    //    ItemInventory itemInventory = this.GetItemByCode(itemCode);
+    //    int newCount = itemInventory.itemCount - addCount;
+    //    if (newCount < 0) return false;
+    //    return true;
+    //}
+    #endregion
 
     public virtual ItemInventory GetItemByCode(ItemCode itemCode)
     {

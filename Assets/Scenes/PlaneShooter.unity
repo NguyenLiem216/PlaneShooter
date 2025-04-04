@@ -639,12 +639,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 427430377}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d20b8449f8864a443af1b5d5a81aa105, type: 3}
+  m_Script: {fileID: 11500000, guid: 21c56e30f366da54fbcd36b796c09b2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  disLimit: 25
+  disLimit: 70
   distance: 0
-  mainCam: {fileID: 519420032}
+  mainCam: {fileID: 0}
 --- !u!1 &432403355
 GameObject:
   m_ObjectHideFlags: 0
@@ -1308,7 +1308,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a1b07ee5d49a5947a8ad03eeedc6277, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  junkCtrl: {fileID: 0}
+  itemCtrl: {fileID: 897279270}
   _collider: {fileID: 756722018}
 --- !u!135 &756722018
 SphereCollider:
@@ -1329,7 +1329,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.1
+  m_Radius: 0.2
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &758107293
 GameObject:
@@ -1421,12 +1421,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 803620827}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb51e2e984940946b91b2282337c4e9, type: 3}
+  m_Script: {fileID: 11500000, guid: b21ff2ed06ecb4b43851b13bcd38c283, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  model: {fileID: 1810371320}
-  junkDespawn: {fileID: 1060578626}
-  junkSO: {fileID: 11400000, guid: 6e3ab2b8b8c911a44991ecacaa24e8a8, type: 2}
+  itemDespawn: {fileID: 1060578626}
 --- !u!1 &861946580
 GameObject:
   m_ObjectHideFlags: 0
@@ -1543,7 +1541,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a1b07ee5d49a5947a8ad03eeedc6277, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  junkCtrl: {fileID: 0}
+  itemCtrl: {fileID: 803620829}
   _collider: {fileID: 863961729}
 --- !u!135 &863961729
 SphereCollider:
@@ -1564,7 +1562,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.1
+  m_Radius: 0.2
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &873664847
 GameObject:
@@ -1689,12 +1687,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 897279268}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb51e2e984940946b91b2282337c4e9, type: 3}
+  m_Script: {fileID: 11500000, guid: b21ff2ed06ecb4b43851b13bcd38c283, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  model: {fileID: 330278537}
-  junkDespawn: {fileID: 427430379}
-  junkSO: {fileID: 11400000, guid: 5dead36ff219307498fd0cd8d78fca3e, type: 2}
+  itemDespawn: {fileID: 427430379}
 --- !u!1 &919450886
 GameObject:
   m_ObjectHideFlags: 0
@@ -1914,12 +1910,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1060578624}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d20b8449f8864a443af1b5d5a81aa105, type: 3}
+  m_Script: {fileID: 11500000, guid: 21c56e30f366da54fbcd36b796c09b2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  disLimit: 25
+  disLimit: 70
   distance: 0
-  mainCam: {fileID: 519420032}
+  mainCam: {fileID: 0}
 --- !u!1 &1264824453
 GameObject:
   m_ObjectHideFlags: 0

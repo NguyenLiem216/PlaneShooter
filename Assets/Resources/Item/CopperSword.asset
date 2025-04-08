@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 834768e217db9134e93d5fd575724245, type: 3}
-  m_Name: GoldOre
+  m_Name: CopperSword
   m_EditorClassIdentifier: 
-  itemCode: 2
-  itemType: 1
-  itemName: Gold Ore
-  defaultMaxStack: 7
+  itemCode: 3
+  itemType: 2
+  itemName: CopperSword
+  defaultMaxStack: 1

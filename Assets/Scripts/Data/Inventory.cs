@@ -73,12 +73,34 @@ public class Inventory : LiemMonoBehaviour
 
     [SerializeField] protected int maxSlot = 70;
     [SerializeField] protected List<ItemInventory> items;
+    public List<ItemInventory> Items => items;
 
     protected override void Start()
     {
         base.Start();
-        this.AddItem(ItemCode.IronOre, 21);
-        this.AddItem(ItemCode.CopperSword, 3);
+        this.AddItem(ItemCode.CopperSword, 1);
+        this.AddItem(ItemCode.GoldOre, 10);
+        this.AddItem(ItemCode.IronOre, 10);
+    }
+
+    public virtual bool AddItem(ItemInventory itemInventory)
+    {
+        int addCount = itemInventory.itemCount;
+        ItemProfileSO itemProfile = itemInventory.itemProfile;
+        ItemCode itemCode = itemProfile.itemCode;
+        ItemType itemType = itemProfile.itemType;
+
+        if (itemType == ItemType.Equiment) return this.AddEquiment(itemInventory);
+
+        return this.AddItem(itemCode,addCount);
+    }
+
+    public virtual bool AddEquiment(ItemInventory itemInventory)
+    {
+        if (this.IsInventoryFull()) return false;
+        this.items.Add(itemInventory);
+
+        return true;
     }
 
     public virtual bool AddItem(ItemCode itemCode, int addCount)
@@ -146,7 +168,7 @@ public class Inventory : LiemMonoBehaviour
 
     protected virtual ItemInventory GetItemNotFullStack(ItemCode itemCode)
     {
-        foreach(ItemInventory itemInventory in this.items)
+        foreach (ItemInventory itemInventory in this.items)
         {
             if (itemCode != itemInventory.itemProfile.itemCode) continue;
             if (this.IsFullStack(itemInventory)) continue;
@@ -174,4 +196,58 @@ public class Inventory : LiemMonoBehaviour
         return itemInventory;
     }
 
+    public virtual bool ItemCheck(ItemCode itemCode, int numberCheck)
+    {
+        int totalCount = this.ItemTotalCount(itemCode);
+        return totalCount >= numberCheck;
+    }
+
+    public virtual int ItemTotalCount(ItemCode itemCode)
+    {
+        int totalCount = 0;
+        foreach (ItemInventory itemInventory in this.items)
+        {
+            if (itemInventory.itemProfile.itemCode != itemCode) continue;
+            totalCount += itemInventory.itemCount;
+        }
+        return totalCount;
+    }
+
+    public virtual void DeductItem(ItemCode itemCode, int deductCount)
+    {
+        ItemInventory itemInventory;
+        int deduct;
+        for (int i = this.items.Count - 1; i >= 0; i--)
+        {
+            if (deductCount <= 0) break;
+
+            itemInventory = this.items[i];
+            if (itemInventory.itemProfile.itemCode != itemCode) continue;
+
+            if (deductCount > itemInventory.itemCount)
+            {
+                deduct = itemInventory.itemCount;
+                deductCount -= itemInventory.itemCount;
+            }
+            else
+            {
+                deduct = deductCount;
+                deductCount = 0;
+            }
+
+            itemInventory.itemCount -= deduct;
+        }
+
+        this.ClearEmptySlot();
+    }
+
+    protected virtual void ClearEmptySlot()
+    {
+        ItemInventory itemInventory;
+        for (int i = 0; i < this.items.Count; i++)
+        {
+            itemInventory = this.items[i];
+            if (itemInventory.itemCount == 0) this.items.RemoveAt(i);
+        }
+    }
 }

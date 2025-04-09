@@ -15,6 +15,17 @@ public class ItemCtrl : LiemMonoBehaviour
     {
         base.LoadComponents();
         this.LoadItemDespawn();
+        this.LoadInventory();
+    }
+
+    protected virtual void LoadInventory()
+    {
+        if (this.itemInventory.itemProfile != null) return;
+        ItemCode itemCode = ItemCodeParser.FromString(transform.name);
+        ItemProfileSO itemProfile = ItemProfileSO.FindByItemCode(itemCode);
+        this.itemInventory.itemProfile = itemProfile;
+        this.itemInventory.itemCount = 1;
+        Debug.Log(transform.name + ": LoadInventory", gameObject);
     }
 
     protected virtual void LoadItemDespawn()

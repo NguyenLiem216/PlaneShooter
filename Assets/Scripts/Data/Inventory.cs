@@ -95,10 +95,12 @@ public class Inventory : LiemMonoBehaviour
         return this.AddItem(itemCode,addCount);
     }
 
-    public virtual bool AddEquiment(ItemInventory itemInventory)
+    public virtual bool AddEquiment(ItemInventory itemPicked)
     {
         if (this.IsInventoryFull()) return false;
-        this.items.Add(itemInventory);
+
+        ItemInventory item = itemPicked.Clone();
+        this.items.Add(item);
 
         return true;
     }

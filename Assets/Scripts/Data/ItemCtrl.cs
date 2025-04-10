@@ -18,13 +18,26 @@ public class ItemCtrl : LiemMonoBehaviour
         this.LoadInventory();
     }
 
+    protected override void OnEnable()
+    {
+        base.OnEnable();
+        this.ResetItem();
+    }
+
+    protected virtual void ResetItem()
+    {
+        this.itemInventory.itemCount = 1;
+        this.itemInventory.upgradeLevel = 0;
+
+    }
+
     protected virtual void LoadInventory()
     {
         if (this.itemInventory.itemProfile != null) return;
         ItemCode itemCode = ItemCodeParser.FromString(transform.name);
         ItemProfileSO itemProfile = ItemProfileSO.FindByItemCode(itemCode);
         this.itemInventory.itemProfile = itemProfile;
-        this.itemInventory.itemCount = 1;
+        this.ResetItem();
         Debug.Log(transform.name + ": LoadInventory", gameObject);
     }
 
@@ -38,7 +51,7 @@ public class ItemCtrl : LiemMonoBehaviour
 
     public virtual void SetItemInventory(ItemInventory itemInventory)
     {
-        this.itemInventory = itemInventory; 
+        this.itemInventory = itemInventory.Clone(); 
     }
 
 }

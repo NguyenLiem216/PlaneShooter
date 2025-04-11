@@ -254,7 +254,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   model: {fileID: 927898567}
   junkDespawn: {fileID: 1702266938}
-  junkSO: {fileID: 11400000, guid: 54bf73444082f4a469f7dde65c0ed9d8, type: 2}
+  shootableObject: {fileID: 11400000, guid: 9ddcc484a78af324ba84717b27571429, type: 2}
 --- !u!1 &82693253
 GameObject:
   m_ObjectHideFlags: 0
@@ -387,7 +387,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   model: {fileID: 304404249}
   junkDespawn: {fileID: 504455875}
-  junkSO: {fileID: 11400000, guid: 54bf73444082f4a469f7dde65c0ed9d8, type: 2}
+  shootableObject: {fileID: 11400000, guid: 9ddcc484a78af324ba84717b27571429, type: 2}
 --- !u!1 &129413726
 GameObject:
   m_ObjectHideFlags: 0
@@ -538,7 +538,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   model: {fileID: 957607354}
   junkDespawn: {fileID: 585028561}
-  junkSO: {fileID: 11400000, guid: 5dead36ff219307498fd0cd8d78fca3e, type: 2}
+  shootableObject: {fileID: 11400000, guid: c27eed45da08b4041be55fa29e233c3b, type: 2}
 --- !u!1 &257308059
 GameObject:
   m_ObjectHideFlags: 0
@@ -715,7 +715,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   model: {fileID: 445568497}
   junkDespawn: {fileID: 1264824454}
-  junkSO: {fileID: 11400000, guid: 6e3ab2b8b8c911a44991ecacaa24e8a8, type: 2}
+  shootableObject: {fileID: 11400000, guid: d09f8b99112ea0a4fadc95d452254545, type: 2}
 --- !u!1 &291582526
 GameObject:
   m_ObjectHideFlags: 0
@@ -1591,7 +1591,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   model: {fileID: 1781031230}
   junkDespawn: {fileID: 2146372417}
-  junkSO: {fileID: 11400000, guid: 6e3ab2b8b8c911a44991ecacaa24e8a8, type: 2}
+  shootableObject: {fileID: 11400000, guid: d09f8b99112ea0a4fadc95d452254545, type: 2}
 --- !u!1 &496066890
 GameObject:
   m_ObjectHideFlags: 0
@@ -3780,7 +3780,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   model: {fileID: 1148346002}
   junkDespawn: {fileID: 1510303408}
-  junkSO: {fileID: 11400000, guid: 5dead36ff219307498fd0cd8d78fca3e, type: 2}
+  shootableObject: {fileID: 11400000, guid: c27eed45da08b4041be55fa29e233c3b, type: 2}
 --- !u!1 &1507360636
 GameObject:
   m_ObjectHideFlags: 0

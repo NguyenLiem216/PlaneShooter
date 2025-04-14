@@ -3,14 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShipMoveMent : MonoBehaviour
+public class ShipMoveMent : LiemMonoBehaviour
 {
     [SerializeField] protected Vector3 targetPosition;
     [SerializeField] protected float speed = 0.1f;
+    [SerializeField] protected float distance = 1f;
+    [SerializeField] protected float minDistance = 1f;
 
-    void FixedUpdate()
+    protected virtual void FixedUpdate()
     {
-        this.GetTargetPosition();
         this.LookAtTarget();
         this.Moving();
     }
@@ -23,18 +24,14 @@ public class ShipMoveMent : MonoBehaviour
         float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg; // Tính góc xoay theo trục Z (độ)
 
         transform.parent.rotation = Quaternion.Euler(0f, 0f, rot_z); // Xoay đối tượng
-    }
-
-
-    protected virtual void GetTargetPosition()
-    {
-        //singleton pattern
-        this.targetPosition = InputManager.Instance.MouseWorldPosition;
-        this.targetPosition.z = 0;
-    }
+    } 
 
     protected virtual void Moving()
     {
+        this.distance = Vector3.Distance(transform.position, this.targetPosition);
+        if (this.distance < this.minDistance) return;
+
+
         Vector3 newPos = Vector3.Lerp(transform.parent.position, targetPosition, this.speed);
         transform.parent.position = newPos;
     }

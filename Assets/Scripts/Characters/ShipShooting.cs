@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShipShooting : MonoBehaviour
+public abstract class ShipShooting : LiemMonoBehaviour
 {
     [SerializeField] protected bool isShooting = false;
     [SerializeField] protected float shootDelay = 1f;
@@ -14,7 +14,7 @@ public class ShipShooting : MonoBehaviour
     {
         this.IsShooting();
     }
-    void FixedUpdate()
+    private void FixedUpdate()
     {
         this.Shooting();
     }
@@ -38,9 +38,5 @@ public class ShipShooting : MonoBehaviour
         bulletCtrl.SetShooter(transform.parent);       
     }
 
-    protected virtual bool IsShooting()
-    {
-        this.isShooting = InputManager.Instance.OnFiring == 1;
-        return isShooting;
-    }
+    protected abstract bool IsShooting();
 }

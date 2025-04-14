@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class SpawnPoints : LiemMonoBehaviour
+public class SpawnPoints : LiemMonoBehaviour
 {
     [SerializeField] protected List<Transform> points;
 

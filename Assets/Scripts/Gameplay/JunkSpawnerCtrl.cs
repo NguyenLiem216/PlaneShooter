@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class JunkSpawnerCtrl : LiemMonoBehaviour
 {
-    [SerializeField] protected JunkSpawnPoints junkSpawnPoints;
-    public JunkSpawnPoints JunkSpawnPoints { get => junkSpawnPoints; }
+    [SerializeField] protected SpawnPoints junkSpawnPoints;
+    public SpawnPoints JunkSpawnPoints { get => junkSpawnPoints; }
 
     [SerializeField] protected JunkSpawner junkSpawner;
     public JunkSpawner JunkSpawner { get => junkSpawner; }
@@ -29,7 +29,7 @@ public class JunkSpawnerCtrl : LiemMonoBehaviour
     protected virtual void LoadSpawnPoints()
     {
         if (this.junkSpawnPoints != null) return;
-        this.junkSpawnPoints = Transform.FindObjectOfType<JunkSpawnPoints>();
+        this.junkSpawnPoints = Transform.FindObjectOfType<SpawnPoints>();
         Debug.Log(transform.name + ": LoadSpawnPoints", gameObject);
     }
 }

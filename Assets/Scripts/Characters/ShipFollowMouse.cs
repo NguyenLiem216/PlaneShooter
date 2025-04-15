@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShipFollowMouse : ShipMoveMent
+public class ShipFollowMouse : ObjMoveMent
 {
     protected override void FixedUpdate()
     {

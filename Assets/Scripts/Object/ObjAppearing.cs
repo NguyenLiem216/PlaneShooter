@@ -8,9 +8,32 @@ public abstract class ObjAppearing : LiemMonoBehaviour
     [Header("Obj Appearing")]
     [SerializeField] protected bool isAppearing = false;
     [SerializeField] protected bool appeared = false;
+    [SerializeField] protected List<IObjAppearObserver> observers = new List<IObjAppearObserver>();
 
     public bool IsAppearing => isAppearing;
     public bool Appeared => appeared;
+
+    protected override void Start()
+    {
+        base.Start();
+        this.OnAppearStart();
+    }
+
+    protected virtual void OnAppearStart()
+    {
+        foreach(IObjAppearObserver observer in this.observers)
+        {
+            observer.OnAppearStart();
+        }
+    }
+    protected virtual void OnAppearFinish()
+    {
+        foreach(IObjAppearObserver observer in this.observers)
+        {
+            observer.OnAppearFinish();
+        }
+    }
+
     protected virtual void FixedUpdate()
     {
         this.Appearing();
@@ -22,5 +45,10 @@ public abstract class ObjAppearing : LiemMonoBehaviour
     {
         this.appeared = true;
         this.isAppearing = false;
+        this.OnAppearFinish();
+    }
+    public virtual void AddObserver(IObjAppearObserver observer)
+    {
+        this.observers.Add(observer);
     }
 }

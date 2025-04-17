@@ -18,7 +18,7 @@ public abstract class AbilityObjectCtrl : ShootableObjectCtrl
     {
         if (this.spawnPoints != null) return;
         this.spawnPoints = GetComponentInChildren<SpawnPoints>();
-        Debug.Log(transform.name + ": LoadSpawnPoints", gameObject);
+        Debug.LogWarning(transform.name + ": LoadSpawnPoints", gameObject);
     }
 
 }

@@ -7,6 +7,7 @@ public class ObjMoveMent : LiemMonoBehaviour
 {
     [SerializeField] protected Vector3 targetPosition;
     [SerializeField] protected float speed = 0.1f;
+    [SerializeField] protected float rotSpeed = 3f;
     [SerializeField] protected float distance = 1f;
     [SerializeField] protected float minDistance = 1f;
 
@@ -23,7 +24,11 @@ public class ObjMoveMent : LiemMonoBehaviour
 
         float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg; // Tính góc xoay theo trục Z (độ)
 
-        transform.parent.rotation = Quaternion.Euler(0f, 0f, rot_z); // Xoay đối tượng
+        float timeSpeed = this.rotSpeed * Time.fixedDeltaTime;
+        Quaternion targetEuler = Quaternion.Euler(0f, 0f, rot_z);
+        Quaternion currentEuler = Quaternion.Lerp(transform.parent.rotation,targetEuler, timeSpeed);
+
+        transform.parent.rotation = currentEuler; // Xoay đối tượng
     } 
 
     protected virtual void Moving()

@@ -30,7 +30,7 @@ public abstract class ShootableObjectCtrl : LiemMonoBehaviour
     {
         if (this.objShooting != null) return;
         this.objShooting = GetComponentInChildren<ObjShooting>();
-        Debug.Log(transform.name + ": LoadObjShooting", gameObject);
+        Debug.LogWarning(transform.name + ": LoadObjShooting", gameObject);
     }
 
     protected virtual void LoadDespawn()

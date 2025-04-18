@@ -5,6 +5,7 @@ using UnityEngine;
 
 public abstract class ShootableObjectCtrl : LiemMonoBehaviour
 {
+    [Header("Shootable Object")]
     [SerializeField] protected Transform model;
     public Transform Model => model;
 
@@ -17,6 +18,12 @@ public abstract class ShootableObjectCtrl : LiemMonoBehaviour
     [SerializeField] protected ObjShooting objShooting;
     public ObjShooting ObjShooting => objShooting;
 
+    [SerializeField] protected ObjMoveMent objMovement;
+    public ObjMoveMent ObjMoveMent => objMovement;
+
+    [SerializeField] protected ObjLookAtTarget objLookAtTarget;
+    public ObjLookAtTarget ObjLookAtTarget => objLookAtTarget;
+
     protected override void LoadComponents()
     {
         base.LoadComponents();
@@ -24,6 +31,8 @@ public abstract class ShootableObjectCtrl : LiemMonoBehaviour
         this.LoadDespawn();
         this.LoadSO();
         this.LoadObjShooting();
+        this.LoadObjMoveMent();
+        this.LoadObjLookAtTarget();
     }
 
     protected virtual void LoadObjShooting()
@@ -50,6 +59,19 @@ public abstract class ShootableObjectCtrl : LiemMonoBehaviour
         }
     }
 
+    protected virtual void LoadObjMoveMent()
+    {
+        if (this.objMovement != null) return;
+        this.objMovement = GetComponentInChildren<ObjMoveMent>();
+        Debug.LogWarning(transform.name + ": LoadObjMovement", gameObject);
+    }
+
+    protected virtual void LoadObjLookAtTarget()
+    {
+        if (this.objLookAtTarget != null) return;
+        this.objLookAtTarget = GetComponentInChildren<ObjLookAtTarget>();
+        Debug.LogWarning(transform.name + ": LoadObjLookAtTarget", gameObject);
+    }
 
     protected virtual void LoadModel()
     {

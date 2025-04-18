@@ -5,31 +5,37 @@ using UnityEngine;
 
 public class ObjMoveMent : LiemMonoBehaviour
 {
+    [Header("Obj Movement")]
     [SerializeField] protected Vector3 targetPosition;
-    [SerializeField] protected float speed = 0.1f;
-    [SerializeField] protected float rotSpeed = 3f;
+    [SerializeField] protected float speed = 0.01f;
+    //[SerializeField] protected float rotSpeed = 3f;
     [SerializeField] protected float distance = 1f;
     [SerializeField] protected float minDistance = 1f;
 
     protected virtual void FixedUpdate()
     {
-        this.LookAtTarget();
+        //this.LookAtTarget();
         this.Moving();
     }
 
-    protected virtual void LookAtTarget()
+    public virtual void SetSpeed(float speed)
     {
-        Vector3 diff = this.targetPosition - transform.parent.position; // Tính vector hướng đến mục tiêu
-        diff.Normalize(); // Chuẩn hóa vector để đảm bảo độ dài là 1
+        this.speed = speed;
+    }
 
-        float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg; // Tính góc xoay theo trục Z (độ)
+    //protected virtual void LookAtTarget()
+    //{
+    //    Vector3 diff = this.targetPosition - transform.parent.position; // Tính vector hướng đến mục tiêu
+    //    diff.Normalize(); // Chuẩn hóa vector để đảm bảo độ dài là 1
 
-        float timeSpeed = this.rotSpeed * Time.fixedDeltaTime;
-        Quaternion targetEuler = Quaternion.Euler(0f, 0f, rot_z);
-        Quaternion currentEuler = Quaternion.Lerp(transform.parent.rotation,targetEuler, timeSpeed);
+    //    float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg; // Tính góc xoay theo trục Z (độ)
 
-        transform.parent.rotation = currentEuler; // Xoay đối tượng
-    } 
+    //    float timeSpeed = this.rotSpeed * Time.fixedDeltaTime;
+    //    Quaternion targetEuler = Quaternion.Euler(0f, 0f, rot_z);
+    //    Quaternion currentEuler = Quaternion.Lerp(transform.parent.rotation,targetEuler, timeSpeed);
+
+    //    transform.parent.rotation = currentEuler; // Xoay đối tượng
+    //} 
 
     protected virtual void Moving()
     {

@@ -1,13 +1,12 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class ShootableObjectAbstract : LiemMonoBehaviour
+public abstract class ObjModifyAbstract : LiemMonoBehaviour
 {
-    
+    [Header("Modify")]
     [SerializeField] protected ShootableObjectCtrl shootableObjectCtrl;
-    public ShootableObjectCtrl ShootableObjectCtrl => shootableObjectCtrl;
 
     protected override void LoadComponents()
     {
@@ -18,7 +17,7 @@ public abstract class ShootableObjectAbstract : LiemMonoBehaviour
     protected virtual void LoadShootableObjectCtrl()
     {
         if (this.shootableObjectCtrl != null) return;
-        this.shootableObjectCtrl = transform.parent.GetComponent<ShootableObjectCtrl>();
+        this.shootableObjectCtrl = transform.GetComponent<ShootableObjectCtrl>();
         Debug.LogWarning(transform.name + ": LoadShootableObjectCtrl", gameObject);
     }
 }

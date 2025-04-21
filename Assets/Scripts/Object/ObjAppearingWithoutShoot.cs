@@ -43,5 +43,7 @@ public class ObjAppearingWithoutShoot : ShootableObjectAbstract, IObjAppearObser
     {
         this.shootableObjectCtrl.ObjShooting.gameObject.SetActive(true);
         this.shootableObjectCtrl.ObjLookAtTarget.gameObject.SetActive(true);
+
+        this.shootableObjectCtrl.Spawner.Hold(transform.parent);
     }
 }

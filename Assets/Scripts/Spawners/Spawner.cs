@@ -116,4 +116,9 @@ public abstract class Spawner : LiemMonoBehaviour
         int rand = UnityEngine.Random.Range(0, this.prefabs.Count);
         return this.prefabs[rand];
     }
+
+    public virtual void Hold(Transform obj)
+    {
+        obj.parent = this.holder;
+    }
 }

@@ -25,6 +25,4 @@ public class DespawnByTime : Despawn
         if (this.timer > this.delay) return true;
         return false;
     }
-
-
 }

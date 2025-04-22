@@ -20,7 +20,7 @@ public class SpawnPoints : LiemMonoBehaviour
         {
             this.points.Add(point);
         }
-        Debug.Log(transform.name + ": LoadPoints", gameObject);
+        //Debug.LogWarning(transform.name + ": LoadPoints", gameObject);
     }
 
     public virtual Transform GetRandom()

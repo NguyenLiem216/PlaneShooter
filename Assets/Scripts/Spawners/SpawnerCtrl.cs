@@ -28,7 +28,7 @@ public class SpawnerCtrl : LiemMonoBehaviour
     protected virtual void LoadSpawnPoints()
     {
         if (this.spawnPoints != null) return;
-        this.spawnPoints = Transform.FindObjectOfType<SpawnPoints>();
+        this.spawnPoints = GameObject.Find("SceneSpawnPoints").GetComponent<SpawnPoints>();
         Debug.Log(transform.name + ": LoadSpawnPoints", gameObject);
     }
 }

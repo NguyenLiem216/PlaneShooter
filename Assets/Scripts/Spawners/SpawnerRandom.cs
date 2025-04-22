@@ -30,7 +30,7 @@ public class SpawnerRandom : LiemMonoBehaviour
     }
     protected virtual void FixedUpdate()
     {
-        //this.JunkSpawning();
+        this.JunkSpawning();
     }
 
     protected virtual void JunkSpawning()

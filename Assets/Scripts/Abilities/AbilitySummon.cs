@@ -6,8 +6,7 @@ using UnityEngine;
 public class AbilitySummon : BaseAbility
 {
     [Header("Ability Summon")]
-    [SerializeField] protected Spawner spawner;
-    
+    [SerializeField] protected Spawner spawner;  
 
 
     protected override void FixedUpdate()

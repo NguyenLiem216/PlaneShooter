@@ -33,7 +33,6 @@ public abstract class BaseAbility : LiemMonoBehaviour
         Debug.Log(transform.name + ": LoadAbilities", gameObject);
     }
 
-
     protected virtual void Timing()
     {
         if (this.isReady) return;

@@ -16,6 +16,7 @@ public abstract class Despawn : LiemMonoBehaviour
         if (!this.CanDespawn()) return;
         this.DespawnObject();
     }
+
     public virtual void DespawnObject()
     {
         Destroy(transform.parent.gameObject);

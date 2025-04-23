@@ -20,6 +20,12 @@ public abstract class BaseAbility : LiemMonoBehaviour
     {
         this.Timing();
     }
+
+    protected virtual void Update()
+    {
+        //
+    }
+
     protected override void LoadComponents()
     {
         base.LoadComponents();

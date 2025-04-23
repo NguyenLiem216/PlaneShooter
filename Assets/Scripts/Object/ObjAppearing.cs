@@ -6,16 +6,23 @@ using UnityEngine;
 public abstract class ObjAppearing : LiemMonoBehaviour
 {
     [Header("Obj Appearing")]
-    [SerializeField] protected bool isAppearing = false;
+    //[SerializeField] protected bool isAppearing = false;
     [SerializeField] protected bool appeared = false;
     [SerializeField] protected List<IObjAppearObserver> observers = new List<IObjAppearObserver>();
 
-    public bool IsAppearing => isAppearing;
+    //public bool IsAppearing => isAppearing;
     public bool Appeared => appeared;
 
     protected override void Start()
     {
         base.Start();
+        this.OnAppearStart();
+    }
+
+    protected override void OnDisable()
+    {
+        base.OnDisable();
+        this.appeared = false;
         this.OnAppearStart();
     }
 
@@ -44,7 +51,7 @@ public abstract class ObjAppearing : LiemMonoBehaviour
     public virtual void Appear()
     {
         this.appeared = true;
-        this.isAppearing = false;
+        //this.isAppearing = false;
         this.OnAppearFinish();
     }
     public virtual void AddObserver(IObjAppearObserver observer)

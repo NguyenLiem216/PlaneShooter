@@ -26,6 +26,8 @@ public abstract class ShootableObjectCtrl : LiemMonoBehaviour
 
     [SerializeField] protected Spawner spawner;
     public Spawner Spawner => spawner;
+    [SerializeField] protected DamageReceiver damageReceiver;
+    public DamageReceiver DamageReceiver => damageReceiver;
 
     protected override void LoadComponents()
     {
@@ -37,6 +39,14 @@ public abstract class ShootableObjectCtrl : LiemMonoBehaviour
         this.LoadObjMoveMent();
         this.LoadObjLookAtTarget();
         this.LoadSpawner();
+        this.LoadDamageReceiver();
+    }
+
+    protected virtual void LoadDamageReceiver()
+    {
+        if (this.damageReceiver != null) return;
+        this.damageReceiver = transform.GetComponentInChildren<DamageReceiver>();
+        Debug.LogWarning(transform.name + ": LoadDamageReceiver", gameObject);
     }
 
     protected virtual void LoadSpawner()

@@ -57,7 +57,7 @@ public abstract class DamageReceiver : LiemMonoBehaviour
         this.CheckIsDead();
     }
 
-    protected virtual bool IsDead()
+    public virtual bool IsDead()
     {
         return this.hp <= 0;
     }

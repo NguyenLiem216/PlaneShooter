@@ -1,7 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.TextCore.Text;
+//using UnityEditor.TextCore.Text;
 using UnityEngine;
 
 public abstract class Spawner : LiemMonoBehaviour
@@ -26,7 +26,7 @@ public abstract class Spawner : LiemMonoBehaviour
     {
         if (this.holder != null) return;
         this.holder = transform.Find("Holder");
-        Debug.Log(transform.name + ": LoadHodler",gameObject);
+        Debug.LogWarning(transform.name + ": LoadHodler",gameObject);
     }
 
     protected virtual void LoadPrefabs()
@@ -41,7 +41,7 @@ public abstract class Spawner : LiemMonoBehaviour
 
         this.HidePrefabs();
 
-        Debug.Log(transform.name + ": LoadPrefabs", gameObject);
+        Debug.LogWarning(transform.name + ": LoadPrefabs", gameObject);
     }
 
     protected virtual void HidePrefabs()
@@ -72,8 +72,10 @@ public abstract class Spawner : LiemMonoBehaviour
         newPrefab.SetPositionAndRotation(spawnPos, rotation);
 
 
-        newPrefab.parent = this.holder;
+        newPrefab.SetParent(this.holder);
         this.spawnedCount++;
+
+
         return newPrefab;
     }
 

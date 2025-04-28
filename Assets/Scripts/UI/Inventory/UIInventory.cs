@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,7 +7,7 @@ public class UIInventory : LiemMonoBehaviour
 {
     private static UIInventory instance;
     public static UIInventory Instance => instance;
-    protected bool isOpen = false;
+    protected bool isOpen = true;
 
     protected override void Awake()
     {
@@ -19,6 +20,19 @@ public class UIInventory : LiemMonoBehaviour
     {
         base.Start();
         //this.Close();
+    }
+    protected virtual void FixedUpdate()
+    {
+        this.ShowItem();
+    }
+
+    protected virtual void ShowItem()
+    {
+        if (!this.isOpen) return;
+
+        float itemCount = PlayerCtrl.Instance.CurrentShip.Inventory.Items.Count;
+        Debug.Log("itemCount: " + itemCount);
+
     }
 
     public virtual void Toggle()

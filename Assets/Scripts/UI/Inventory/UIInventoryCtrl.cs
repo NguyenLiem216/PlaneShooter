@@ -6,10 +6,11 @@ using UnityEngine;
 
 public class UIInventoryCtrl : LiemMonoBehaviour
 {
+    [Header("Inv Item Spawner")]
+
     [SerializeField] protected Transform content;
     public Transform Content => content;
 
-    [Header("Inv Item Spawner")]
     [SerializeField] protected UIInvItemSpawner uIInvItemSpawner;
     public UIInvItemSpawner UIInvItemSpawner => uIInvItemSpawner;
 

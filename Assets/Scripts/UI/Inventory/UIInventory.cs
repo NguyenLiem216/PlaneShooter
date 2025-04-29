@@ -37,12 +37,13 @@ public class UIInventory : UIInventoryAbstract
 
         this.ClearItems();
 
-        float itemCount = PlayerCtrl.Instance.CurrentShip.Inventory.Items.Count;
-        for (int i = 1; i <= itemCount; i++)
+
+        List<ItemInventory> items = PlayerCtrl.Instance.CurrentShip.Inventory.Items;
+        UIInvItemSpawner spawner = this.uIInventoryCtrl.UIInvItemSpawner;
+        foreach (ItemInventory item in items)
         {
-            this.SpawnTest(i);
-        }
-        Debug.Log("itemCount: " + itemCount);
+            spawner.SpawnItem(item);
+        }       
 
     }
 
@@ -51,12 +52,6 @@ public class UIInventory : UIInventoryAbstract
         this.uIInventoryCtrl.UIInvItemSpawner.ClearItems();
     }
 
-    protected virtual void SpawnTest(int i)
-    {
-        Transform uiItem = this.uIInventoryCtrl.UIInvItemSpawner.Spawn(UIInvItemSpawner.normalItem, Vector3.zero, Quaternion.identity);
-        uiItem.transform.localScale = new Vector3(1, 1, 1);
-        uiItem.gameObject.SetActive(true);
-    }
     public virtual void Toggle()
     {
         this.isOpen = !this.isOpen;

@@ -191,6 +191,7 @@ public class Inventory : LiemMonoBehaviour
     {
         ItemInventory itemInventory = new ItemInventory
         {
+            itemId = ItemInventory.RandomID(),
             itemProfile = itemProfile,
             maxStack = itemProfile.defaultMaxStack
         };

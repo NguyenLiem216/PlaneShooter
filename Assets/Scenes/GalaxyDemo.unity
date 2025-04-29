@@ -856,7 +856,7 @@ GameObject:
   - component: {fileID: 115789695}
   - component: {fileID: 115789694}
   m_Layer: 5
-  m_Name: ItemCount
+  m_Name: ItemNumber
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1518,7 +1518,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.15
+  m_Radius: 0.3
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &259181492
 GameObject:
@@ -2072,7 +2072,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.2
+  m_Radius: 0.36
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &310040741
 GameObject:
@@ -2172,7 +2172,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85094f5a04973c0429fe4f96b889d3c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uIInventoryCtrl: {fileID: 0}
+  uIInventoryCtrl: {fileID: 1690043061}
 --- !u!1 &314376651
 GameObject:
   m_ObjectHideFlags: 0
@@ -4206,7 +4206,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &758107294
 Transform:
   m_ObjectHideFlags: 0
@@ -4504,6 +4504,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemDespawn: {fileID: 1060578626}
   itemInventory:
+    itemId: 
     itemProfile: {fileID: 11400000, guid: 9da5ce323373fa64a98a4011ee16338e, type: 2}
     itemCount: 1
     maxStack: 7
@@ -5058,7 +5059,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.2
+  m_Radius: 0.35
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &863961726
 GameObject:
@@ -5304,6 +5305,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemDespawn: {fileID: 427430379}
   itemInventory:
+    itemId: 
     itemProfile: {fileID: 11400000, guid: b4f4fc863a5daa64b85d2284f60624bb, type: 2}
     itemCount: 1
     maxStack: 7
@@ -6086,6 +6088,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1105125699}
+  - component: {fileID: 1105125700}
   m_Layer: 5
   m_Name: UIInvItem
   m_TagString: Untagged
@@ -6114,6 +6117,26 @@ RectTransform:
   m_AnchoredPosition: {x: -154.99998, y: 74.99999}
   m_SizeDelta: {x: 90, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1105125700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1105125698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e3d46626ee9aa54f918b28df2cf529c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemInventory:
+    itemId: 
+    itemProfile: {fileID: 0}
+    itemCount: 0
+    maxStack: 7
+    upgradeLevel: 0
+  itemName: {fileID: 1621617320}
+  itemNumber: {fileID: 115789694}
 --- !u!1 &1114731407
 GameObject:
   m_ObjectHideFlags: 0
@@ -7182,6 +7205,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemDespawn: {fileID: 1036163076}
   itemInventory:
+    itemId: 
     itemProfile: {fileID: 11400000, guid: 86ffcf5fc302947468d480910f590554, type: 2}
     itemCount: 1
     maxStack: 7

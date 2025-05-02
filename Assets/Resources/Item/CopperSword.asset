@@ -16,6 +16,7 @@ MonoBehaviour:
   itemType: 2
   itemName: CopperSword
   defaultMaxStack: 1
+  sprite: {fileID: 21300000, guid: 71cecefcffabd074194bc279ba7dd619, type: 3}
   upgradeLevels:
   - ingredients:
     - itemProfile: {fileID: 11400000, guid: 9da5ce323373fa64a98a4011ee16338e, type: 2}

@@ -17,11 +17,22 @@ public class UIItemInventory : LiemMonoBehaviour
     [SerializeField] protected Text itemNumber;
     public Text ItemNumber => itemNumber;
 
+    [SerializeField] protected Image itemImage;
+    public Image ItemImage => itemImage;
+
     protected override void LoadComponents()
     {
         base.LoadComponents();
         this.LoadItemName();
         this.LoadItemNumber();
+        this.LoadItemImage();
+    }
+
+    protected virtual void LoadItemImage()
+    {
+        if (this.itemImage != null) return;
+        this.itemImage = transform.Find("ItemImage").GetComponent<Image>();
+        Debug.LogWarning(transform.name + ": LoadItemSprite", gameObject);
     }
 
     protected virtual void LoadItemName()
@@ -43,5 +54,6 @@ public class UIItemInventory : LiemMonoBehaviour
         this.itemInventory = item;
         this.itemName.text = this.itemInventory.itemProfile.itemName;
         this.ItemNumber.text = this.itemInventory.itemCount.ToString();
+        this.itemImage.sprite = this.itemInventory.itemProfile.sprite;
     }
 }
